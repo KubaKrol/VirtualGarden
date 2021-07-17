@@ -1,0 +1,597 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2996217842245814935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293898689086538937}
+  m_Layer: 0
+  m_Name: Stage1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &293898689086538937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996217842245814935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4454340407028702971}
+  m_Father: {fileID: 9013822323149608350}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5987542459475199728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8006034395464288354}
+  m_Layer: 0
+  m_Name: Stage0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8006034395464288354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987542459475199728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2146625467590157438}
+  m_Father: {fileID: 9013822323149608350}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8098201704635263854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9013822323149608350}
+  - component: {fileID: 2552287685261719352}
+  - component: {fileID: 5569654931054228212}
+  m_Layer: 0
+  m_Name: Plant_JapaneseMapleTree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9013822323149608350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098201704635263854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8006034395464288354}
+  - {fileID: 293898689086538937}
+  - {fileID: 1822977826899970608}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2552287685261719352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098201704635263854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ca9aa3d1ce02c4cb7635eea314993c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantGrowthStages:
+  - timeToReachStage: 0
+    healthyPlantStageGameObject: {fileID: 1621727775670206148}
+    sickPlantStageGameObject: {fileID: 0}
+    deadPlantStageGameObject: {fileID: 0}
+  - timeToReachStage: 5
+    healthyPlantStageGameObject: {fileID: 5514026997358212557}
+    sickPlantStageGameObject: {fileID: 0}
+    deadPlantStageGameObject: {fileID: 0}
+  - timeToReachStage: 10
+    healthyPlantStageGameObject: {fileID: 5514026996537280962}
+    sickPlantStageGameObject: {fileID: 6455446848814531989}
+    deadPlantStageGameObject: {fileID: 8164145655788498637}
+  maxIrrigationTime: 50
+  CurrentPlantState: 0
+--- !u!114 &5569654931054228212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098201704635263854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueId: Plant_JapaneseMapleTree_04c2cb26-9839-451f-a1eb-65a972f1a955
+--- !u!1 &9101308736611798591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822977826899970608}
+  m_Layer: 0
+  m_Name: Stage2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822977826899970608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101308736611798591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4454340408350778100}
+  - {fileID: 2937305602552966819}
+  - {fileID: 8793013957760791671}
+  m_Father: {fileID: 9013822323149608350}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &275298963850454441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 293898689086538937}
+    m_Modifications:
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717263257121968228, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_Name
+      value: JapaneseMapleTree_Stage1_Healthy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717263257121968228, guid: 606d9e101cec71644a9a31957f2eecbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 606d9e101cec71644a9a31957f2eecbf, type: 3}
+--- !u!1 &5514026997358212557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5717263257121968228, guid: 606d9e101cec71644a9a31957f2eecbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 275298963850454441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4454340407028702971 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4468399806129879890, guid: 606d9e101cec71644a9a31957f2eecbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 275298963850454441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2090491975147460305
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1822977826899970608}
+    m_Modifications:
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804232755963394076, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_Name
+      value: JapaneseMapleTree_Stage2_Dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804232755963394076, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6432e28ec4b7e5949b0347ab2496ef19, type: 3}
+--- !u!1 &8164145655788498637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7804232755963394076, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090491975147460305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8793013957760791671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7423591328838722214, guid: 6432e28ec4b7e5949b0347ab2496ef19,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090491975147460305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7812960798265769395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1822977826899970608}
+    m_Modifications:
+    - target: {fileID: 2371413644537377905, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_Name
+      value: JapaneseMapleTree_Stage2_Healthy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371413644537377905, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34bf65fff33b4fb44b70ec5d296253ba, type: 3}
+--- !u!1 &5514026996537280962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2371413644537377905, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 7812960798265769395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4454340408350778100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5890085386998538055, guid: 34bf65fff33b4fb44b70ec5d296253ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 7812960798265769395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8754626667075039716
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1822977826899970608}
+    m_Modifications:
+    - target: {fileID: 2371413644537377905, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_Name
+      value: JapaneseMapleTree_Stage2_Sick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371413644537377905, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b62a118c57522e45bca4becc0adf30a, type: 3}
+--- !u!1 &6455446848814531989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2371413644537377905, guid: 1b62a118c57522e45bca4becc0adf30a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8754626667075039716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2937305602552966819 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5890085386998538055, guid: 1b62a118c57522e45bca4becc0adf30a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8754626667075039716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8849499076998104792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8006034395464288354}
+    m_Modifications:
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804232755963394076, guid: 4f203a277f0994c46a98cde88e192c66,
+        type: 3}
+      propertyPath: m_Name
+      value: JapaneseMapleTree_Stage0_Healthy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f203a277f0994c46a98cde88e192c66, type: 3}
+--- !u!1 &1621727775670206148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7804232755963394076, guid: 4f203a277f0994c46a98cde88e192c66,
+    type: 3}
+  m_PrefabInstance: {fileID: 8849499076998104792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2146625467590157438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7423591328838722214, guid: 4f203a277f0994c46a98cde88e192c66,
+    type: 3}
+  m_PrefabInstance: {fileID: 8849499076998104792}
+  m_PrefabAsset: {fileID: 0}
