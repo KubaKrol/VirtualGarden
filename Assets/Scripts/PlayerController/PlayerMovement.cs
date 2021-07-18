@@ -54,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
             movementDirection += -playerCamera.transform.forward;
 
         movementDirection.y = 0f;
-        if(movementDirection != Vector3.zero)
-            Move(movementDirection);
+        Move(movementDirection);
     }
 
     #endregion UnityMethods

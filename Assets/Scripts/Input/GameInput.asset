@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd974930cefe1164797851c447a1e9ef, type: 3}
   m_Name: GameInput
   m_EditorClassIdentifier: 
-  currentPlatform: 0
+  currentPlatform: 1

@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: ControllerBoxGlow
   m_Shader: {fileID: 4800000, guid: e030bde756726c94bba808165a905b79, type: 3}
   m_ShaderKeywords: 
@@ -76,5 +77,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.84805554, b: 0.453, a: 1}
+    - _Color: {r: 0.5984726, g: 0.9150943, b: 0.58272517, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

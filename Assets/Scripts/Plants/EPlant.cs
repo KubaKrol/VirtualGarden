@@ -1,4 +1,4 @@
 ﻿public enum EPlant
 {
-    JapanesseTree,
+    Tree_01,
 }

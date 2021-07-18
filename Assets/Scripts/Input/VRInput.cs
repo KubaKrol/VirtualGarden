@@ -12,5 +12,5 @@ public class VRInput : IGameInput
 
     public float LookAround_Y_Axis => throw new System.NotImplementedException();
 
-    public bool Use => throw new System.NotImplementedException();
+    public bool Use => OVRInput.GetDown(OVRInput.RawButton.A);
 }
