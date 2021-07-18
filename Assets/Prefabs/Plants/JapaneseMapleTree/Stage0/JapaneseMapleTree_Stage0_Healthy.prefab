@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7423591328838722214}
   - component: {fileID: 5812528011141262595}
   - component: {fileID: 8597028812771154377}
-  m_Layer: 0
-  m_Name: JapaneseMapleTree_Stage0
+  - component: {fileID: 3467158029716192075}
+  m_Layer: 9
+  m_Name: JapaneseMapleTree_Stage0_Healthy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3467158029716192075
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804232755963394076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1815021238715657238, guid: 69e0f81096ee38445adbc24f10931040, type: 3}

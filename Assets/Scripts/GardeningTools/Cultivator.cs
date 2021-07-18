@@ -24,8 +24,8 @@ public class Cultivator : GardeningTool
     private void Start()
     {
         //TEMP
-        PickUp();
-        SelectPlant(EPlant.JapanesseTree);
+        //PickUp();
+        //SelectPlant(EPlant.JapanesseTree);
     }
 
     private void Update()

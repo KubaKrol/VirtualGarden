@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4468399806129879890}
   - component: {fileID: 3446035511914274879}
   m_Layer: 0
-  m_Name: JapaneseMapleTree_Stage1
+  m_Name: JapaneseMapleTree_Stage1_Healthy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
