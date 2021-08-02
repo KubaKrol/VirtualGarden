@@ -74,6 +74,14 @@ public static class SaveSystem
         allSnapshotsList = snapshotList;
     }
 
+    public static void DeleteSnapshotRecord(string uniqueID)
+    {
+        if (GameData.snapshotContainers[currentSnapshotContainer].ContainsKey(uniqueID))
+        {
+            GameData.snapshotContainers[currentSnapshotContainer].Remove(uniqueID);
+        }
+    }
+
     public static List<string> GetAllSavedUniqueIDs()
     {
         List<string> uniqueIDList = new List<string>();

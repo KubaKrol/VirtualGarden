@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -101,7 +102,7 @@ public class Plant : MonoBehaviour, ISnapshot
     [Button]
     public void CutMeDown()
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 0.01f);
     }
 
     public void UpdatePlantedDateWithCurrentDate()
@@ -124,6 +125,27 @@ public class Plant : MonoBehaviour, ISnapshot
         Debug.Log("Seconds planted: " + (System.DateTime.Now - PlantedDate).TotalSeconds);
 
         Debug.Log("Irrigation Level: " + IrrigationLevel);
+    }
+
+    public PlantStats GetStats()
+    {
+        PlantStats myStats = new PlantStats();
+        myStats.age = System.DateTime.Now - PlantedDate;
+        myStats.daysPlanted = (int)Mathf.Floor((float)(System.DateTime.Now - PlantedDate).TotalDays);
+        myStats.hoursPlanted = (int)Mathf.Floor((float)(System.DateTime.Now - PlantedDate).TotalHours);
+        myStats.minutesPlanted = (int)Mathf.Floor((float)(System.DateTime.Now - PlantedDate).TotalMinutes);
+        myStats.secondsPlanted = (int)(System.DateTime.Now - PlantedDate).TotalSeconds;
+        myStats.irrigationLevel = IrrigationLevel;
+        myStats.irrigationPercentage = IrrigationLevel / maxIrrigationTime;
+        myStats.aliveTimeLeft = TimeSpan.FromSeconds(Convert.ToDouble(IrrigationLevel));
+        myStats.aliveDaysLeft = TimeSpan.FromSeconds(Convert.ToDouble(IrrigationLevel)).Days;
+        myStats.currentStage = plantGrowthStages.IndexOf(CurrentGrowthStage);
+        myStats.maxStages = plantGrowthStages.Count - 1;
+
+        if(myStats.currentStage + 1 <= plantGrowthStages.Count - 1)
+            myStats.timeToNextStage = TimeSpan.FromSeconds(Convert.ToDouble(plantGrowthStages[myStats.currentStage + 1].timeToReachStage - PlantedTime_InSeconds));
+
+        return myStats;
     }
 
     #endregion Public Methods

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5839775220927390521}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005694087838887032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034861588620867520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8252597668011754962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7694829724729591216}
   - component: {fileID: 8825579541414399988}
   - component: {fileID: 4539983987483523497}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant_Tree_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7694829725299092383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stage0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,6 +308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Tree_01_Stage0_Healthy
       objectReference: {fileID: 0}
+    - target: {fileID: 4124428527682325909, guid: d253ffb8af71a624f818ff866f6ce395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d253ffb8af71a624f818ff866f6ce395, type: 3}
 --- !u!1 &3800577745540412991 stripped
@@ -389,6 +394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Tree_01_Stage3_Healthy
       objectReference: {fileID: 0}
+    - target: {fileID: 8557441707795640431, guid: 099346eaffeef544da3630b121db9ea0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099346eaffeef544da3630b121db9ea0, type: 3}
 --- !u!1 &7569610309184721286 stripped
@@ -414,6 +424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Tree_01_Stage2_Healthy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838924890023076782, guid: 8292c37baa3bf6d499a1612a50b98991,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7838924890023380132, guid: 8292c37baa3bf6d499a1612a50b98991,
         type: 3}
@@ -496,6 +511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Tree_01_Stage4_Healthy
       objectReference: {fileID: 0}
+    - target: {fileID: 2420919053174454391, guid: 240acfe19b79ea64789c1fc88530b070,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2420919053174725765, guid: 240acfe19b79ea64789c1fc88530b070,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -576,6 +596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_Tree_01_Stage1_Healthy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090664786966165688, guid: 3006655548a0ccd44860006aeb231a44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4090664786966504122, guid: 3006655548a0ccd44860006aeb231a44,
         type: 3}

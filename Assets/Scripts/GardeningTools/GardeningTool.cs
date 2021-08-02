@@ -13,14 +13,20 @@ public class GardeningTool : MonoBehaviour
 
 
     #region Unity Methods
-    //Methods from MonoBehaviour.
-    //OnEnable(), OnDisable(), Awake(), Start(), Update() etc...
+
+    public virtual void Update()
+    {
+        if (CurrentState == EGardeningToolState.BeingUsed)
+        {
+            Use();
+        }
+    }
 
     #endregion UnityMethods
 
 
     #region Public Variables
-    
+
     public EGardeningToolState CurrentState { get; private set; }
 
     #endregion Public Variables
@@ -28,14 +34,16 @@ public class GardeningTool : MonoBehaviour
 
     #region Public Methods
 
-    public void PickUp()
+    public virtual void PickUp()
     {
+        gameObject.SetActive(true);
         CurrentState = EGardeningToolState.BeingUsed;
     }
 
-    public void PutDown()
+    public virtual void PutDown()
     {
         CurrentState = EGardeningToolState.Idle;
+        gameObject.SetActive(false);
     }
 
     public virtual void Use()

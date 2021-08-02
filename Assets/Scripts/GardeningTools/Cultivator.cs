@@ -21,24 +21,14 @@ public class Cultivator : GardeningTool
 
     #region Unity Methods
 
-    private void Start()
-    {
-        //TEMP
-        PickUp();
-        SelectPlant(EPlant.Tree_01);
-    }
-
-    private void Update()
+    public override void Update()
     {
         if(CurrentState == EGardeningToolState.BeingUsed)
         {
             CheckPlanting();
-
-            if (gameInput.CurrentGameInput.Use)
-            {
-                Plant();
-            }
         }
+
+        base.Update();
     }
 
     #endregion UnityMethods
@@ -76,7 +66,22 @@ public class Cultivator : GardeningTool
 
     public override void Use()
     {
-        base.Use();
+        if (gameInput.CurrentGameInput.Use_Single)
+        {
+            Plant();
+        }
+    }
+
+    public override void PickUp()
+    {
+        base.PickUp();
+        SelectPlant(EPlant.Tree_01);
+    }
+
+    public override void PutDown()
+    {
+        base.PutDown();
+        DestroyPlantPreview();
     }
 
     #endregion Public Methods

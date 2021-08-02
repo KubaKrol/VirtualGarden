@@ -56,6 +56,7 @@ public class SaveManager : MonoBehaviour
         {
             GetComponent<UniqueIdSceneValidator>().FillOutAllGuidsList();
             CollectAllSnapshots();
+            SaveSystem.ClearSnapshotContainer("VirtualGarden");
             SaveSystem.AssignSceneSnapshots(allSnapshots);
             SaveSystem.SaveGame(playerCheckpointTransform);
         }
