@@ -14,9 +14,15 @@ public class Axe : GardeningTool
 
     #region Unity Methods
 
+    private void Start()
+    {
+        cachedPos = transform.position;
+    }
+
     public override void Update()
     {
         base.Update();
+        CalculateSpeed();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,29 +32,36 @@ public class Axe : GardeningTool
             var plant = other.gameObject.GetComponentInParent<Plant>();
 
             if (plant != null)
-                if (!interactingPlants.Contains(plant))
-                    interactingPlants.Add(plant);
+            {
+                if(Speed > 0.04f)
+                {
+                    plant.CutMeDown();
+                }
+            }
+                
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
+        /*if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
         {
             var plant = other.gameObject.GetComponentInParent<Plant>();
 
             if (plant != null)
-                if (interactingPlants.Contains(plant))
-                    interactingPlants.Remove(plant);
-        }
+            {
+
+            }
+                
+        }*/
     }
 
     #endregion UnityMethods
 
 
     #region Public Variables
-    //Variables accessible from every other script referencing this class.
-    //These variables should not be visible in Inspector and should be hidden by using [HideInInspector] or [ReadOnly]
+
+    public float Speed { get; private set; }
 
     #endregion Public Variables
 
@@ -57,21 +70,12 @@ public class Axe : GardeningTool
 
     public override void Use()
     {
-        if (gameInput.CurrentGameInput.Use_Single)
-        {
-            for(int i = 0; i < interactingPlants.Count; i++)
-            {
-                interactingPlants[i].CutMeDown();
-            }
-
-            interactingPlants.Clear();
-        }
+        //nothing
     }
 
     public override void PickUp()
     {
         base.PickUp();
-        interactingPlants.Clear();
     }
 
     #endregion Public Methods
@@ -79,15 +83,20 @@ public class Axe : GardeningTool
 
     #region Private Variables
 
-    private List<Plant> interactingPlants = new List<Plant>();
-
+    private Vector3 cachedPos;
+   
 
     #endregion Private Variables
 
 
     #region Private Methods
-    //Private methods, accessible only from this class.
-
+    
+    private void CalculateSpeed()
+    {
+        var currentPos = transform.position;
+        Speed = Vector3.Distance(currentPos, cachedPos);
+        cachedPos = transform.position;
+    }
 
     #endregion Private Methods
 

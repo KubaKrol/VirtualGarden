@@ -170,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7694829724729591219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ca9aa3d1ce02c4cb7635eea314993c, type: 3}
+  m_Script: {fileID: 11500000, guid: 443ef2ae69582024391888ba045d72c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 0
@@ -179,23 +179,23 @@ MonoBehaviour:
     healthyPlantStageGameObject: {fileID: 3800577745540412991}
     sickPlantStageGameObject: {fileID: 0}
     deadPlantStageGameObject: {fileID: 0}
-  - timeToReachStage: 10
+  - timeToReachStage: 30
     healthyPlantStageGameObject: {fileID: 6321431244448260959}
     sickPlantStageGameObject: {fileID: 0}
     deadPlantStageGameObject: {fileID: 0}
-  - timeToReachStage: 30
+  - timeToReachStage: 90
     healthyPlantStageGameObject: {fileID: 4223077719522390685}
     sickPlantStageGameObject: {fileID: 0}
     deadPlantStageGameObject: {fileID: 0}
-  - timeToReachStage: 60
+  - timeToReachStage: 200
     healthyPlantStageGameObject: {fileID: 7569610309184721286}
     sickPlantStageGameObject: {fileID: 0}
     deadPlantStageGameObject: {fileID: 0}
-  - timeToReachStage: 1000
+  - timeToReachStage: 500
     healthyPlantStageGameObject: {fileID: 8742790782813283392}
     sickPlantStageGameObject: {fileID: 0}
     deadPlantStageGameObject: {fileID: 0}
-  maxIrrigationTime: 3600
+  maxIrrigationTime: 900
   CurrentPlantState: 0
 --- !u!114 &4539983987483523497
 MonoBehaviour:

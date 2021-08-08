@@ -37,6 +37,7 @@ Transform:
   - {fileID: 5952859595247808333}
   - {fileID: 7165554703256853073}
   - {fileID: 6456767771129200758}
+  - {fileID: 2671472456006009805}
   m_Father: {fileID: 1934828116286876627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -277,6 +278,7 @@ MonoBehaviour:
   - {fileID: 3203964472843504014}
   - {fileID: 7165554703256853086}
   - {fileID: 2429243202426245005}
+  - {fileID: 6857186015964122325}
 --- !u!1 &3765370698315202450
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +621,93 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a34cc03cf878ff48b1b8662824f8208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8409491907021221542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6974188053940622197}
+    m_Modifications:
+    - target: {fileID: 1669658118693079346, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_Name
+      value: GardenTool_Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71300125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3250003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3499985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6837457
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7297204
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 86.274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be966385fdec5d842a3e2d5b85f73a38, type: 3}
+--- !u!4 &2671472456006009805 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5883528909374303595, guid: be966385fdec5d842a3e2d5b85f73a38,
+    type: 3}
+  m_PrefabInstance: {fileID: 8409491907021221542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6857186015964122325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3142696754954429043, guid: be966385fdec5d842a3e2d5b85f73a38,
+    type: 3}
+  m_PrefabInstance: {fileID: 8409491907021221542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57728eed930d580458b8d26f108fb43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9147816306869923755
