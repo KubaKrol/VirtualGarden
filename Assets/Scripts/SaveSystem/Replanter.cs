@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantsRePlanter : MonoBehaviour
+public class Replanter : MonoBehaviour
 {
     #region Inspector Variables
 
@@ -11,6 +11,7 @@ public class PlantsRePlanter : MonoBehaviour
 
     [SerializeField] private UniqueIdSceneValidator uniqueIdSceneValidator;
     [SerializeField] private PlantsDatabase plantsDatabase;
+    [SerializeField] private BuildablesDatabase buildablesDatabase;
 
     #endregion Inspector Variables
 
@@ -44,15 +45,22 @@ public class PlantsRePlanter : MonoBehaviour
         {
             if(uniqueIdSceneValidator.FindUniqueIdOnScene(allSavedUniqueIDs[i]) == null)
             {
-                var plantSnapshotDatas = SaveSystem.GetSnapshotsByUniqueID(allSavedUniqueIDs[i]);
+                var snapshotDatas = SaveSystem.GetSnapshotsByUniqueID(allSavedUniqueIDs[i]);
 
-                foreach (var snapshotData in plantSnapshotDatas)
+                foreach (var snapshotData in snapshotDatas)
                 {
                     if(snapshotData is Plant.PlantSnapshotData plantSnapshotData)
                     {
                         var plantGameObject = Instantiate(plantsDatabase.GetPlantData(plantSnapshotData.plantType).plantPrefab, plantSnapshotData.position, Quaternion.identity);
                         var plantedPlant = plantGameObject.GetComponent<Plant>();
                         plantedPlant.LoadMe(plantSnapshotData);
+                    }
+
+                    if(snapshotData is Buildable.BuildableSnapshotData buildableSnapshotData)
+                    {
+                        var buildableGameObject = Instantiate(buildablesDatabase.GetBuildableData(buildableSnapshotData.myDatabaseId).buildablePrefab, buildableSnapshotData.position, buildableSnapshotData.rotation);
+                        var plantedBuildable = buildableGameObject.GetComponent<Buildable>();
+                        plantedBuildable.LoadMe(buildableSnapshotData);
                     }
                 }
             }

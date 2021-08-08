@@ -50,6 +50,9 @@ public class Hammer : GardeningTool
     public void SelectBuildable(int id)
     {
         CurrentlySelectedBuildable = buildablesDatabase.GetBuildableData(id);
+
+        if(CurrentlySelectedBuildable != null)
+            currentlySelectedBuildableId = id;
     }
 
     [Button]
@@ -59,7 +62,7 @@ public class Hammer : GardeningTool
         {
             var buildableGameObject = Instantiate(CurrentlySelectedBuildable.buildablePrefab, buildingCheckRaycastHit.point, Quaternion.identity);
             var buildable = buildableGameObject.GetComponent<Buildable>();
-            buildable.BuildMe();
+            buildable.BuildMe(currentlySelectedBuildableId);
         }
     }
 
@@ -89,6 +92,8 @@ public class Hammer : GardeningTool
     #region Private Variables
 
     private RaycastHit buildingCheckRaycastHit;
+
+    private int currentlySelectedBuildableId;
 
     private BuildablePreview currentBuildablePreview;
 

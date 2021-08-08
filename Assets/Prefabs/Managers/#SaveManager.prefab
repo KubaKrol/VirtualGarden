@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueIdSceneValidator: {fileID: 3873945472144944921}
   plantsDatabase: {fileID: 11400000, guid: 45e34dc90baa3e64494265d66578c5a3, type: 2}
+  buildablesDatabase: {fileID: 11400000, guid: 2ea58d336aad311488f8961135f5ca89, type: 2}
