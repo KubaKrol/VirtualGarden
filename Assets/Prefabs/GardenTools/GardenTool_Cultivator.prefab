@@ -113,6 +113,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  previewRotationSpeed: 50
 --- !u!1 &4548165300807933091
 GameObject:
   m_ObjectHideFlags: 0

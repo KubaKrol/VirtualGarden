@@ -17,3 +17,11 @@ MonoBehaviour:
       type: 3}
     buildablePreviewPrefab: {fileID: 1799870567349602857, guid: face3ee446fb13e4c8d3dd90dabf4636,
       type: 3}
+  - buildablePrefab: {fileID: 3684248081936034089, guid: 10aebd9eea70b0041b642c3bc08702fb,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 4519761395548168181, guid: 072a8c0e384bfbf4792f947cceafd56f,
+      type: 3}
+  - buildablePrefab: {fileID: 1176130548250014425, guid: b04da445654e0a2409f27fe110678845,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 1488688133998423532, guid: 09b1b9f0d50583f44b0952c3db86ea70,
+      type: 3}

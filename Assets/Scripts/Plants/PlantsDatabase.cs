@@ -7,6 +7,8 @@ public class PlantsDatabase : ScriptableObject
 {
     public List<PlantData> plantsDatabase;
 
+    private int plantDatabaseIterator = 0;
+
     public PlantData GetPlantData(EPlant plant)
     {
         for(int i = 0; i < plantsDatabase.Count; i++)
@@ -18,6 +20,25 @@ public class PlantsDatabase : ScriptableObject
         }
 
         return null;
+    }
+
+    public PlantData GetNextPlantData()
+    {
+        plantDatabaseIterator += 1;
+
+        if (plantDatabaseIterator >= plantsDatabase.Count)
+            plantDatabaseIterator = 0;
+
+        return plantsDatabase[plantDatabaseIterator];
+    }
+    public PlantData GetPreviousPlantData()
+    {
+        plantDatabaseIterator -= 1;
+
+        if (plantDatabaseIterator < 0)
+            plantDatabaseIterator = plantsDatabase.Count - 1;
+
+        return plantsDatabase[plantDatabaseIterator];
     }
 }
 

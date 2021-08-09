@@ -15,6 +15,7 @@ public class Cultivator : GardeningTool
 
     [SerializeField] private Transform raycastOrigin;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private float previewRotationSpeed = 15f;
 
     #endregion Inspector Variables
 
@@ -26,6 +27,33 @@ public class Cultivator : GardeningTool
         if(CurrentState == EGardeningToolState.BeingUsed)
         {
             CheckPlanting();
+
+            rotationOffset += previewRotationSpeed * gameInput.CurrentGameInput.ToolHorizontalAxis * Time.deltaTime;
+
+            if(gameInput.CurrentGameInput.ToolVerticalAxis > 0)
+            {
+                if (canChangePlant)
+                {
+                    DestroyPlantPreview();
+                    CurrentlySelectedPlant = plantsDatabase.GetNextPlantData();
+                    canChangePlant = false;
+                }
+            }
+
+            if(gameInput.CurrentGameInput.ToolVerticalAxis < 0)
+            {
+                if (canChangePlant)
+                {
+                    DestroyPlantPreview();
+                    CurrentlySelectedPlant = plantsDatabase.GetPreviousPlantData();
+                    canChangePlant = false;
+                }
+            }
+
+            if(gameInput.CurrentGameInput.ToolVerticalAxis == 0)
+            {
+                canChangePlant = true;
+            }
         }
 
         base.Update();
@@ -58,7 +86,7 @@ public class Cultivator : GardeningTool
     {
         if (PlantingAvailable)
         {
-            var plantGameObject = Instantiate(CurrentlySelectedPlant.plantPrefab, plantingCheckRaycastHit.point, Quaternion.identity);
+            var plantGameObject = Instantiate(CurrentlySelectedPlant.plantPrefab, plantingCheckRaycastHit.point, Quaternion.AngleAxis(rotationOffset, Vector3.up));
             var plantedPlant = plantGameObject.GetComponent<Plant>();
             plantedPlant.PlantMe();
         }
@@ -93,6 +121,10 @@ public class Cultivator : GardeningTool
 
     private PlantPreview currentPlantPreview;
 
+    private float rotationOffset;
+
+    private bool canChangePlant = true;
+
     #endregion Private Variables
 
 
@@ -118,10 +150,11 @@ public class Cultivator : GardeningTool
     {
         if(currentPlantPreview == null && CurrentlySelectedPlant != null)
         {
-            var currentPlantPreviewObject = Instantiate(CurrentlySelectedPlant.plantPreviewPrefab.gameObject, plantingCheckRaycastHit.point, Quaternion.identity);
+            var currentPlantPreviewObject = Instantiate(CurrentlySelectedPlant.plantPreviewPrefab.gameObject, plantingCheckRaycastHit.point, Quaternion.AngleAxis(rotationOffset, Vector3.up));
             currentPlantPreview = currentPlantPreviewObject.GetComponent<PlantPreview>();
         }
 
+        currentPlantPreview.transform.rotation = Quaternion.AngleAxis(rotationOffset, Vector3.up);
         currentPlantPreview.gameObject.transform.position = plantingCheckRaycastHit.point;
     }
 

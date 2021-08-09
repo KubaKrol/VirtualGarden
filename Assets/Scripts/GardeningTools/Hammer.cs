@@ -15,6 +15,7 @@ public class Hammer : GardeningTool
 
     [SerializeField] private Transform raycastOrigin;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private float previewRotationSpeed = 50f;
 
     #endregion Inspector Variables
 
@@ -25,6 +26,33 @@ public class Hammer : GardeningTool
         if (CurrentState == EGardeningToolState.BeingUsed)
         {
             CheckBuilding();
+
+            if (gameInput.CurrentGameInput.ToolVerticalAxis > 0)
+            {
+                if (canChangeBuildable)
+                {
+                    DestroyBuildablePreview();
+                    CurrentlySelectedBuildable = buildablesDatabase.GetNextBuildableData();
+                    canChangeBuildable = false;
+                }
+            }
+
+            if (gameInput.CurrentGameInput.ToolVerticalAxis < 0)
+            {
+                if (canChangeBuildable)
+                {
+                    DestroyBuildablePreview();
+                    CurrentlySelectedBuildable = buildablesDatabase.GetPreviousBuildableData();
+                    canChangeBuildable = false;
+                }
+            }
+
+            if (gameInput.CurrentGameInput.ToolVerticalAxis == 0)
+            {
+                canChangeBuildable = true;
+            }
+
+            rotationOffset += previewRotationSpeed * gameInput.CurrentGameInput.ToolHorizontalAxis * Time.deltaTime;
         }
 
         base.Update();
@@ -60,7 +88,7 @@ public class Hammer : GardeningTool
     {
         if (BuildingAvailable)
         {
-            var buildableGameObject = Instantiate(CurrentlySelectedBuildable.buildablePrefab, buildingCheckRaycastHit.point, Quaternion.identity);
+            var buildableGameObject = Instantiate(CurrentlySelectedBuildable.buildablePrefab, buildingCheckRaycastHit.point, Quaternion.AngleAxis(rotationOffset, Vector3.up));
             var buildable = buildableGameObject.GetComponent<Buildable>();
             buildable.BuildMe(currentlySelectedBuildableId);
         }
@@ -97,6 +125,10 @@ public class Hammer : GardeningTool
 
     private BuildablePreview currentBuildablePreview;
 
+    private float rotationOffset;
+
+    private bool canChangeBuildable;
+
     #endregion Private Variables
 
 
@@ -122,10 +154,11 @@ public class Hammer : GardeningTool
     {
         if (currentBuildablePreview == null && CurrentlySelectedBuildable != null)
         {
-            var currentBuildablePreviewObject = Instantiate(CurrentlySelectedBuildable.buildablePreviewPrefab.gameObject, buildingCheckRaycastHit.point, Quaternion.identity);
+            var currentBuildablePreviewObject = Instantiate(CurrentlySelectedBuildable.buildablePreviewPrefab.gameObject, buildingCheckRaycastHit.point, Quaternion.AngleAxis(rotationOffset, Vector3.up));
             currentBuildablePreview = currentBuildablePreviewObject.GetComponent<BuildablePreview>();
         }
 
+        currentBuildablePreview.transform.rotation = Quaternion.AngleAxis(rotationOffset, Vector3.up);
         currentBuildablePreview.gameObject.transform.position = buildingCheckRaycastHit.point;
     }
 

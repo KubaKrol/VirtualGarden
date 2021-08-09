@@ -8,4 +8,6 @@
     bool Use_Continous { get; }
     bool ChangeTool { get;  }
     bool UseDetailer { get; }
+    float ToolHorizontalAxis { get; }
+    float ToolVerticalAxis { get; }
 }

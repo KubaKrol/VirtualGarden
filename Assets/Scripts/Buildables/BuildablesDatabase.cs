@@ -7,6 +7,8 @@ public class BuildablesDatabase : ScriptableObject
 {
     public List<BuildableData> buildablesDatabase;
 
+    private int buildablesDatabaseIterator;
+
     public BuildableData GetBuildableData(int id)
     {
         if(id >= 0 && id < buildablesDatabase.Count)
@@ -15,6 +17,26 @@ public class BuildablesDatabase : ScriptableObject
         }
 
         return null;
+    }
+
+    public BuildableData GetNextBuildableData()
+    {
+        buildablesDatabaseIterator += 1;
+
+        if (buildablesDatabaseIterator >= buildablesDatabase.Count)
+            buildablesDatabaseIterator = 0;
+
+        return buildablesDatabase[buildablesDatabaseIterator];
+    }
+
+    public BuildableData GetPreviousBuildableData()
+    {
+        buildablesDatabaseIterator -= 1;
+
+        if (buildablesDatabaseIterator < 0)
+            buildablesDatabaseIterator = buildablesDatabase.Count - 1;
+
+        return buildablesDatabase[buildablesDatabaseIterator];
     }
 }
 

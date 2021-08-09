@@ -19,4 +19,8 @@ public class VRInput : IGameInput
     public bool ChangeTool => OVRInput.GetDown(OVRInput.RawButton.RHandTrigger);
 
     public bool UseDetailer => OVRInput.Get(OVRInput.RawButton.LIndexTrigger);
+
+    public float ToolHorizontalAxis => OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x;
+
+    public float ToolVerticalAxis => OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y;
 }

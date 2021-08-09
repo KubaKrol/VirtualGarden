@@ -17,4 +17,30 @@ public class PCInput : IGameInput
     public bool ChangeTool => Input.GetKeyDown(KeyCode.Q);
 
     public bool UseDetailer => Input.GetKey(KeyCode.R);
+
+    public float ToolHorizontalAxis
+    {
+        get
+        {
+            if (Input.GetKey(KeyCode.Keypad6))
+                return 1f;
+            if (Input.GetKey(KeyCode.Keypad4))
+                return -1f;
+
+            return 0f;
+        }
+    }
+
+    public float ToolVerticalAxis
+    {
+        get
+        {
+            if (Input.GetKey(KeyCode.Keypad8))
+                return 1f;
+            if (Input.GetKey(KeyCode.Keypad2))
+                return -1f;
+
+            return 0f;
+        }
+    }
 }
