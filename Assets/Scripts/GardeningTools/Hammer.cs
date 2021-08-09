@@ -33,6 +33,7 @@ public class Hammer : GardeningTool
                 {
                     DestroyBuildablePreview();
                     CurrentlySelectedBuildable = buildablesDatabase.GetNextBuildableData();
+                    currentlySelectedBuildableId = buildablesDatabase.buildablesDatabaseIterator;
                     canChangeBuildable = false;
                 }
             }
@@ -43,6 +44,7 @@ public class Hammer : GardeningTool
                 {
                     DestroyBuildablePreview();
                     CurrentlySelectedBuildable = buildablesDatabase.GetPreviousBuildableData();
+                    currentlySelectedBuildableId = buildablesDatabase.buildablesDatabaseIterator;
                     canChangeBuildable = false;
                 }
             }

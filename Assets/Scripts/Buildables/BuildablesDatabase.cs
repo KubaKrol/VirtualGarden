@@ -7,7 +7,7 @@ public class BuildablesDatabase : ScriptableObject
 {
     public List<BuildableData> buildablesDatabase;
 
-    private int buildablesDatabaseIterator;
+    public int buildablesDatabaseIterator;
 
     public BuildableData GetBuildableData(int id)
     {

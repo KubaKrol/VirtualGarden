@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ public class Buildable : MonoBehaviour, ISnapshot
 
     #region Private Variables
 
-    private int myDatabaseId;
+    [ShowInInspector] private int myDatabaseId;
 
     #endregion Private Variables
 

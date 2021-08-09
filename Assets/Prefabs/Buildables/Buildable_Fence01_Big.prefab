@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueId: TestScene_00_e3f0d1e6-3405-43c2-bcb5-50d97fd26945
+  uniqueId: Buildable_Fence01_Big_2bfe5fed-db6f-4a5c-bc8e-92e44b93114a
 --- !u!114 &3684248081936034089
 MonoBehaviour:
   m_ObjectHideFlags: 0
