@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8088221453176833273}
   - component: {fileID: 531517002941552874}
   - component: {fileID: 8339951060724787377}
+  - component: {fileID: 526933546521098808}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 01eeec1b1521adc4eb4719e8dafc5d0d, type: 2}
+--- !u!114 &526933546521098808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614387037529483001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueId: TestScene_00_0120a6a0-0d06-473a-b8c1-9e66481bb021
 --- !u!1 &1934828116286876625
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +196,8 @@ GameObject:
   - component: {fileID: 4751855803631204489}
   - component: {fileID: 5774274378258204030}
   - component: {fileID: 7794996733876210440}
+  - component: {fileID: 2073188755325322082}
+  - component: {fileID: 5918695661021842621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -279,6 +295,31 @@ MonoBehaviour:
   - {fileID: 7165554703256853086}
   - {fileID: 2429243202426245005}
   - {fileID: 6857186015964122325}
+--- !u!114 &2073188755325322082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934828116286876625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d5c4fc5a8761949b9ae370f149887c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5918695661021842621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934828116286876625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueId: TestScene_00_2970a716-f796-4e61-8383-2e58672e07ee
 --- !u!1 &3765370698315202450
 GameObject:
   m_ObjectHideFlags: 0

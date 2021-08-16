@@ -51,7 +51,7 @@ public class Replanter : MonoBehaviour
                 {
                     if(snapshotData is Plant.PlantSnapshotData plantSnapshotData)
                     {
-                        var plantGameObject = Instantiate(plantsDatabase.GetPlantData(plantSnapshotData.plantType).plantPrefab, plantSnapshotData.position, Quaternion.identity);
+                        var plantGameObject = Instantiate(plantsDatabase.GetPlantData(plantSnapshotData.myDatabaseId).plantPrefab, plantSnapshotData.position, Quaternion.identity);
                         var plantedPlant = plantGameObject.GetComponent<Plant>();
                         plantedPlant.LoadMe(plantSnapshotData);
                     }

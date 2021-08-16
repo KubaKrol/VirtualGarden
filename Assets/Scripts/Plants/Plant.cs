@@ -12,7 +12,6 @@ public class Plant : MonoBehaviour, ISnapshot
 
     [Title("Plant Settings")]
 
-    [SerializeField] public EPlant plantType;
     [SerializeField] public List<PlantGrowthStage> plantGrowthStages;
     [SerializeField] public float maxIrrigationTime;
 
@@ -20,14 +19,6 @@ public class Plant : MonoBehaviour, ISnapshot
 
 
     #region Unity Methods
-
-    private void Start()
-    {
-        if (!SaveSystem.SaveFileExists())
-        {
-            PlantMe();
-        }
-    }
     
     private void Update()
     {
@@ -68,8 +59,10 @@ public class Plant : MonoBehaviour, ISnapshot
     [Title("Functionalities")]
 
     [Button]
-    public void PlantMe()
+    public void PlantMe(int databaseId)
     {
+        myDatabaseId = databaseId;
+
         UpdatePlantedDateWithCurrentDate();
         IrrigationLevel = maxIrrigationTime;
 
@@ -152,8 +145,8 @@ public class Plant : MonoBehaviour, ISnapshot
 
 
     #region Private Variables
-    //Private variables, accessible only from this class.
 
+    private int myDatabaseId;
 
     #endregion Private Variables
 
@@ -277,7 +270,7 @@ public class Plant : MonoBehaviour, ISnapshot
 
     public class PlantSnapshotData : SnapshotData
     {
-        public EPlant plantType;
+        public int myDatabaseId;
         public float irrigationLevel;
         public int growthStage;
         public System.DateTime plantedDate;
@@ -290,6 +283,7 @@ public class Plant : MonoBehaviour, ISnapshot
     {
         if(snapshotData is PlantSnapshotData plantSnapshotData)
         {
+            myDatabaseId = plantSnapshotData.myDatabaseId;
             IrrigationLevel = plantSnapshotData.irrigationLevel;
             PlantedDate = plantSnapshotData.plantedDate;
             LatestWateringRecord = plantSnapshotData.latestWateringRecord;
@@ -300,10 +294,10 @@ public class Plant : MonoBehaviour, ISnapshot
     {
         var newPlantSnapshotData = new PlantSnapshotData();
 
+        newPlantSnapshotData.myDatabaseId = myDatabaseId;
         newPlantSnapshotData.irrigationLevel = IrrigationLevel;
         newPlantSnapshotData.plantedDate = PlantedDate;
         newPlantSnapshotData.latestWateringRecord = LatestWateringRecord;
-        newPlantSnapshotData.plantType = plantType;
         newPlantSnapshotData.position = transform.position;
 
         return newPlantSnapshotData;

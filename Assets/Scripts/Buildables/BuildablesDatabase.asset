@@ -25,3 +25,20 @@ MonoBehaviour:
       type: 3}
     buildablePreviewPrefab: {fileID: 1488688133998423532, guid: 09b1b9f0d50583f44b0952c3db86ea70,
       type: 3}
+  - buildablePrefab: {fileID: 1607340080825147334, guid: 8ba4bc6948bd7d840b19e4bc210a8281,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 8863402065446517089, guid: 5f705f0f283d7124ea91a8509ba7fa32,
+      type: 3}
+  - buildablePrefab: {fileID: 1831768932340972162, guid: 8dba721ab875ffa4fb17a3f38fc88b77,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 7972835490363197764, guid: 51d810e70be366542a07da6889807868,
+      type: 3}
+  - buildablePrefab: {fileID: 5554482680171451236, guid: 2010fabfa3b36dd4888bd5be5850e394,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 361923909493531289, guid: a856050e9f5972543a3cdb0c18c82f2d,
+      type: 3}
+  - buildablePrefab: {fileID: 8157046192433129597, guid: dae781687e1712e498ebb8e6fe1a52e8,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 8768874383341621475, guid: 415fedba1ecddbd4c84b55537ff2ced5,
+      type: 3}
+  buildablesDatabaseIterator: 2

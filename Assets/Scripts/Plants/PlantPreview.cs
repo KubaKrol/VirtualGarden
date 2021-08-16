@@ -7,10 +7,6 @@ public class PlantPreview : MonoBehaviour
 {
     #region Inspector Variables
 
-    [Title("Settings")]
-
-    public EPlant plantType;
-
     #endregion Inspector Variables
 
 

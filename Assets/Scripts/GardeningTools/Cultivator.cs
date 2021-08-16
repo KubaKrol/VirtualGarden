@@ -76,9 +76,9 @@ public class Cultivator : GardeningTool
     [Title("Functionalities")]
 
     [Button]
-    public void SelectPlant(EPlant plant)
+    public void SelectPlant(int id)
     {
-        CurrentlySelectedPlant = plantsDatabase.GetPlantData(plant);
+        CurrentlySelectedPlant = plantsDatabase.GetPlantData(id);
     }
 
     [Button]
@@ -88,7 +88,7 @@ public class Cultivator : GardeningTool
         {
             var plantGameObject = Instantiate(CurrentlySelectedPlant.plantPrefab, plantingCheckRaycastHit.point, Quaternion.AngleAxis(rotationOffset, Vector3.up));
             var plantedPlant = plantGameObject.GetComponent<Plant>();
-            plantedPlant.PlantMe();
+            plantedPlant.PlantMe(plantsDatabase.GetDatabaseIndex(CurrentlySelectedPlant));
         }
     }
 
@@ -103,7 +103,7 @@ public class Cultivator : GardeningTool
     public override void PickUp()
     {
         base.PickUp();
-        SelectPlant(EPlant.Tree_01);
+        SelectPlant(0);
     }
 
     public override void PutDown()

@@ -9,17 +9,24 @@ public class PlantsDatabase : ScriptableObject
 
     private int plantDatabaseIterator = 0;
 
-    public PlantData GetPlantData(EPlant plant)
+    public PlantData GetPlantData(int id)
     {
-        for(int i = 0; i < plantsDatabase.Count; i++)
+        if(id >= 0 && id < plantsDatabase.Count)
         {
-            if(plantsDatabase[i].plant == plant)
-            {
-                return plantsDatabase[i];
-            }
+            return plantsDatabase[id];
         }
 
         return null;
+    }
+
+    public int GetDatabaseIndex(PlantData plantData)
+    {
+        if (plantsDatabase.Contains(plantData))
+        {
+            return plantsDatabase.IndexOf(plantData);
+        }
+
+        return -1;
     }
 
     public PlantData GetNextPlantData()
@@ -45,7 +52,6 @@ public class PlantsDatabase : ScriptableObject
 [System.Serializable]
 public class PlantData
 {
-    public EPlant plant;
     public Plant plantPrefab;
     public PlantPreview plantPreviewPrefab;
 }

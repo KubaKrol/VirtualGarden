@@ -54,10 +54,20 @@ public class Detailer : MonoBehaviour
 
                 var plantStats = raycastedPlant.GetStats();
 
-                treeAgeText.text = "Age: " + plantStats.age.ToString();
-                irrigationFillImage.fillAmount = plantStats.irrigationPercentage;
-                treeIrigationText.text = "Irrigation: " /*+ plantStats.irrigationPercentage*/ + "\nAlive time left: " + plantStats.aliveTimeLeft.ToString();
-                treeStageText.text = "Growth stage: " + plantStats.currentStage + "/" + plantStats.maxStages + "\nTime to next stage: " + plantStats.timeToNextStage.ToString();
+                if(raycastedPlant.CurrentPlantState != EPlantState.Dead)
+                {
+                    treeAgeText.text = "Age: " + plantStats.age.ToString();
+                    irrigationFillImage.fillAmount = plantStats.irrigationPercentage;
+                    treeIrigationText.text = "Irrigation: " /*+ plantStats.irrigationPercentage*/ + "\nAlive time left: " + plantStats.aliveTimeLeft.ToString();
+                    treeStageText.text = "Growth stage: " + plantStats.currentStage + "/" + plantStats.maxStages + "\nTime to next stage: " + plantStats.timeToNextStage.ToString();
+                } 
+                else
+                {
+                    treeAgeText.text = "Age: " + "DEAD";
+                    irrigationFillImage.fillAmount = plantStats.irrigationPercentage;
+                    treeIrigationText.text = "Irrigation: " /*+ plantStats.irrigationPercentage*/ + "\nAlive time left: " + "DEAD";
+                    treeStageText.text = "Growth stage: " + "DEAD" + "\nTime to next stage: " + "DEAD";
+                }
             }
         }
         else

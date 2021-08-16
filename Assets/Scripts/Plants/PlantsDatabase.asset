@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: PlantsDatabase
   m_EditorClassIdentifier: 
   plantsDatabase:
-  - plant: 0
-    plantPrefab: {fileID: 8825579541414399988, guid: a4ab4642d77f834448b22b566dea6d08,
+  - plantPrefab: {fileID: 8825579541414399988, guid: a4ab4642d77f834448b22b566dea6d08,
       type: 3}
     plantPreviewPrefab: {fileID: 5879643758730226259, guid: 1ee5431e53485a74e8275ba9245024f5,
+      type: 3}
+  - plantPrefab: {fileID: 4136801897327285952, guid: db026b85de3fb9f4494092e390983cbb,
+      type: 3}
+    plantPreviewPrefab: {fileID: 3266073651831776707, guid: c26b13c8e435ebd4193b891a133dc08d,
+      type: 3}
+  - plantPrefab: {fileID: 149625682822004640, guid: e9873651a112abd40956b9e9717cafae,
+      type: 3}
+    plantPreviewPrefab: {fileID: 5533133336257179392, guid: 20791b4d71d05254aa4cc9ca795acddb,
+      type: 3}
+  - plantPrefab: {fileID: 6335475121212575041, guid: 7bcc67b10020c6745804095a580285d9,
+      type: 3}
+    plantPreviewPrefab: {fileID: 673893519201306530, guid: 3129eb6bffbc08142ad5177e2d537eed,
+      type: 3}
+  - plantPrefab: {fileID: 4774001233771145301, guid: 54f5554af43cb7249b7108f7e26d778e,
+      type: 3}
+    plantPreviewPrefab: {fileID: 7196535221315089207, guid: ce30cec6c3e85414b9f433631a3d6df2,
+      type: 3}
+  - plantPrefab: {fileID: 730865272314425261, guid: 01f178568801b4248af4162b7c3eeeb3,
+      type: 3}
+    plantPreviewPrefab: {fileID: 2151302804197255427, guid: bfc5e4df87893b9449b5a221a649431e,
       type: 3}
