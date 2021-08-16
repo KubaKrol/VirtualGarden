@@ -19,14 +19,28 @@ public class SaveManager : MonoBehaviour
     [SerializeField] public string snapshotContainer;
     [BoxGroup("Save system", centerLabel: true)]
     [SerializeField] private ESaveProfile saveProfile;
-    
-#endregion Inspector Variables
+
+    #endregion Inspector Variables
 
 
-#region Unity Methods
+    #region Unity Methods
+
+    private void OnEnable()
+    {
+        EventManager.OnPlantPlanted += SaveGame;
+        EventManager.OnBuildingBuilt += SaveGame;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnPlantPlanted -= SaveGame;
+        EventManager.OnBuildingBuilt -= SaveGame;
+    }
 
     private void Awake()
     {
+        replanter = GetComponent<Replanter>();
+
         GetComponent<UniqueIdSceneValidator>().FillOutAllGuidsList();
         CollectAllSnapshots();
         SaveSystem.AssignSceneSnapshots(allSnapshots);
@@ -69,6 +83,7 @@ public class SaveManager : MonoBehaviour
         if (Application.isPlaying)
         {
             SaveSystem.LoadGame();
+            replanter.Replant();
         }
     }
 
@@ -81,6 +96,41 @@ public class SaveManager : MonoBehaviour
         else
             Debug.Log("In order to clear container, the application must be playing");
     }
+
+    public void DeleteProfileData()
+    {
+        if (Application.isPlaying)
+        {
+            SaveSystem.DeleteProfileData(SaveSystem.currentSaveProfile);
+        }
+    }
+
+    public void DeleteProfileData(ESaveProfile saveProfile)
+    {
+        if (Application.isPlaying)
+        {
+            SaveSystem.DeleteProfileData(saveProfile);
+        }
+    }
+
+    public void ChangeProfile()
+    {
+        if (SaveSystem.currentSaveProfile == ESaveProfile.profile1)
+        {
+            saveProfile = ESaveProfile.profile2;
+            SaveSystem.SetSaveProfile(ESaveProfile.profile2);
+        }
+        else if (SaveSystem.currentSaveProfile == ESaveProfile.profile2)
+        {
+            saveProfile = ESaveProfile.profile3;
+            SaveSystem.SetSaveProfile(ESaveProfile.profile3);
+        }
+        else if (SaveSystem.currentSaveProfile == ESaveProfile.profile3)
+        {
+            saveProfile = ESaveProfile.profile1;
+            SaveSystem.SetSaveProfile(ESaveProfile.profile1);
+        }
+    }
     
 #endregion Public Methods
 
@@ -89,12 +139,14 @@ public class SaveManager : MonoBehaviour
 
     [BoxGroup("Snapshots", centerLabel: true)]
     [Unity.Collections.ReadOnly] [ShowInInspector] private List<ISnapshot> allSnapshots;
-    
-#endregion Private Variables
+
+    private Replanter replanter;
+
+    #endregion Private Variables
 
 
-#region Private Methods
-    
+    #region Private Methods
+
     [BoxGroup("Snapshots", centerLabel: true)]
     [Button(ButtonSizes.Large)]
     private void CollectAllSnapshots()
@@ -110,6 +162,11 @@ public class SaveManager : MonoBehaviour
                 allSnapshots.Add(snapshot); 
             }
         }
+    }
+    
+    private void SaveGame()
+    {
+        Save(null);
     }
     
 #if UNITY_EDITOR

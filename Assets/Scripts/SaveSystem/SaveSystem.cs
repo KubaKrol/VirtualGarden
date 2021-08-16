@@ -82,6 +82,11 @@ public static class SaveSystem
         }
     }
 
+    public static void DeleteProfileData(ESaveProfile saveProfile)
+    {
+        File.Delete(FilePath(saveProfile));
+    }
+
     public static List<string> GetAllSavedUniqueIDs()
     {
         List<string> uniqueIDList = new List<string>();

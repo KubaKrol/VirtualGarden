@@ -69,6 +69,8 @@ public class Plant : MonoBehaviour, ISnapshot
         LatestWateringRecord = new PlantWateringRecord();
         LatestWateringRecord.irrigationLevelDuringWatering = maxIrrigationTime;
         LatestWateringRecord.wateringDate = System.DateTime.Now;
+
+        EventManager.OnPlantPlanted.Invoke();
     }
 
     [Button]

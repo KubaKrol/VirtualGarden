@@ -12,6 +12,7 @@ public class MenuNavigator : MonoBehaviour
     [Title("Dependencies")]
 
     [SerializeField] private Transform raycastOrigin;
+    [SerializeField] private GameInput gameInput;
 
     [Title("Settings")]
 
@@ -38,11 +39,19 @@ public class MenuNavigator : MonoBehaviour
 
                 raycastedButton.Select();
             }
-        } else
+        } 
+        else
         {
             EventSystem.current.SetSelectedGameObject(null);
             selectedButton = null;
-            return;
+        }
+
+        if (selectedButton != null)
+        {
+            if (gameInput.CurrentGameInput.Use_Single)
+            {
+                selectedButton.onClick.Invoke();
+            }
         }
     }
 

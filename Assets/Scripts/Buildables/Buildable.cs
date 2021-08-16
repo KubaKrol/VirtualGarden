@@ -32,6 +32,7 @@ public class Buildable : MonoBehaviour, ISnapshot
     public void BuildMe(int databaseId)
     {
         myDatabaseId = databaseId;
+        EventManager.OnBuildingBuilt.Invoke();
     }
 
     #endregion Public Methods

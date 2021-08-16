@@ -18,12 +18,6 @@ public class Replanter : MonoBehaviour
 
     #region Unity Methods
 
-    public void Start()
-    {
-        if(SaveSystem.SaveFileExists())
-            Replant();
-    }
-
     #endregion UnityMethods
 
 
@@ -39,6 +33,9 @@ public class Replanter : MonoBehaviour
     [Button]
     public void Replant()
     {
+        if (!SaveSystem.SaveFileExists())
+            return;
+
         var allSavedUniqueIDs = SaveSystem.GetAllSavedUniqueIDs();
 
         for(int i = 0; i < allSavedUniqueIDs.Count; i++)
