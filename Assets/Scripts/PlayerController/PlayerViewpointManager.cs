@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerViewpointManager : MonoBehaviour, ISnapshot
 {
     #region Inspector Variables
-    //These are variables that should be set in the Inspector - Use [SerializeField] or [ShowInInspector]
-    //Can be public or private.
+
+    [Title("Dependencies")]
+
+    [SerializeField] private PlayerCamera playerCamera;
 
     #endregion Inspector Variables
 
@@ -36,7 +38,8 @@ public class PlayerViewpointManager : MonoBehaviour, ISnapshot
 
         var newPlayerViewpoint = new PlayerViewpoint();
         newPlayerViewpoint.position = transform.position;
-        newPlayerViewpoint.rotation = transform.rotation;
+        newPlayerViewpoint.playerCameraRotX = playerCamera.GetComponent<SmoothMouseLook>().rotX;
+        newPlayerViewpoint.playerCameraRotY = playerCamera.GetComponent<SmoothMouseLook>().rotY;
 
         if(playerViewpointsList.Count == 3)
         {
@@ -49,12 +52,28 @@ public class PlayerViewpointManager : MonoBehaviour, ISnapshot
         }
     }
 
+    [Button]
+    public void MoveToViewport()
+    {
+        var viewportIndex = currentViewportIndex;
+        transform.position = playerViewpointsList[viewportIndex].position;
+        playerCamera.GetComponent<SmoothMouseLook>().rotX = playerViewpointsList[viewportIndex].playerCameraRotX;
+        playerCamera.GetComponent<SmoothMouseLook>().rotY = playerViewpointsList[viewportIndex].playerCameraRotY;
+        currentViewportIndex++;
+
+        if (currentViewportIndex >= playerViewpointsList.Count)
+            currentViewportIndex = 0;
+        
+    }
+
     #endregion Public Methods
 
 
     #region Private Variables
 
     [ShowInInspector] private List<PlayerViewpoint> playerViewpointsList;
+
+    private int currentViewportIndex = 0;
 
     #endregion Private Variables
 
@@ -79,7 +98,8 @@ public class PlayerViewpointManager : MonoBehaviour, ISnapshot
     public struct PlayerViewpoint
     {
         public Vector3 position;
-        public Quaternion rotation;
+        public float playerCameraRotX;
+        public float playerCameraRotY;
     }
 
     #endregion Public Types

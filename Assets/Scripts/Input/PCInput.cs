@@ -43,4 +43,10 @@ public class PCInput : IGameInput
             return 0f;
         }
     }
+
+    public bool saveViewpoint => Input.GetKeyDown(KeyCode.F5);
+
+    public bool goToViewpoint => Input.GetKeyDown(KeyCode.F6);
+
+    public bool useMenuNavigator => throw new System.NotImplementedException();
 }

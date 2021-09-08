@@ -41,4 +41,12 @@ MonoBehaviour:
       type: 3}
     buildablePreviewPrefab: {fileID: 8768874383341621475, guid: 415fedba1ecddbd4c84b55537ff2ced5,
       type: 3}
-  buildablesDatabaseIterator: 2
+  - buildablePrefab: {fileID: 7391066021476291446, guid: 4c2d0110f2d633e4188cd3975e29f00a,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 3462342812882738953, guid: 921a1df31e00d7449beb6dcc0fd4f363,
+      type: 3}
+  - buildablePrefab: {fileID: 9189798859139373749, guid: 9ad570a19d3735247bcd62e3b95e4582,
+      type: 3}
+    buildablePreviewPrefab: {fileID: 6693510206336258275, guid: 1d3dfcb80fcd5ee4e9208e475e8a8933,
+      type: 3}
+  buildablesDatabaseIterator: 0

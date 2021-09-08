@@ -171,26 +171,23 @@ public class Plant : MonoBehaviour, ISnapshot
 
     private PlantGrowthStage CalculateCurrentPlantStage()
     {
-        if(plantGrowthStages != null && plantGrowthStages.Count > 0)
-        {
+        if(plantGrowthStages != null && plantGrowthStages.Count > 0){
             PlantGrowthStage calculatedGrowthStage = plantGrowthStages[0];
-            
-            for(int i = 0; i < plantGrowthStages.Count; i++)
-            {
+         
+            for(int i = 0; i < plantGrowthStages.Count; i++){
                 if(PlantedTime_InSeconds > plantGrowthStages[i].timeToReachStage)
-                {
                     calculatedGrowthStage = plantGrowthStages[i];
-                }
             }
-
             return calculatedGrowthStage;
         }
-
         return null;
     }
 
     private float CalculateIrrigationLevel()
     {
+        if (GameManager.instance.currentSimulationMode == ESimulationMode.Sandbox)
+            return maxIrrigationTime;
+
         if(LatestWateringRecord != null)
         {
             var timeElapsed = (System.DateTime.Now - LatestWateringRecord.wateringDate).TotalSeconds;
@@ -212,14 +209,10 @@ public class Plant : MonoBehaviour, ISnapshot
     private EPlantState CalculateCurrentPlantState()
     {
         if (IrrigationLevel < 0)
-        {
             return EPlantState.Dead;
-        }
 
         if (IrrigationLevel < maxIrrigationTime * 0.5f)
-        {
             return EPlantState.Sick;
-        }
 
         return EPlantState.Healthy;
     }
@@ -234,22 +227,26 @@ public class Plant : MonoBehaviour, ISnapshot
     {
         foreach (var plantStage in plantGrowthStages)
         {
-            if(plantStage.healthyPlantStageGameObject != null)
-                plantStage.healthyPlantStageGameObject.SetActive(false);
-            if (plantStage.sickPlantStageGameObject != null)
-                plantStage.sickPlantStageGameObject.SetActive(false);
-            if (plantStage.deadPlantStageGameObject != null)
-                plantStage.deadPlantStageGameObject.SetActive(false);
+            plantStage.healthyPlantStageGameObject.SetActive(false);
+            plantStage.sickPlantStageGameObject.SetActive(false);
+            plantStage.deadPlantStageGameObject.SetActive(false);
         }
 
-        if (currentPlantState == EPlantState.Healthy || currentGrowthStage.sickPlantStageGameObject == null || currentGrowthStage.deadPlantStageGameObject == null)
-            currentGrowthStage.healthyPlantStageGameObject?.SetActive(true);
-
-        if (currentPlantState == EPlantState.Sick)
-            currentGrowthStage.sickPlantStageGameObject?.SetActive(true);
-
-        if (currentPlantState == EPlantState.Dead)
-            currentGrowthStage.deadPlantStageGameObject?.SetActive(true);
+        switch (currentPlantState)
+        {
+            case EPlantState.Healthy:
+                currentGrowthStage.healthyPlantStageGameObject?.SetActive(true);
+                break;
+            case EPlantState.Sick:
+                currentGrowthStage.sickPlantStageGameObject?.SetActive(true);
+                break;
+            case EPlantState.Dead:
+                currentGrowthStage.deadPlantStageGameObject?.SetActive(true);
+                break;
+            default:
+                currentGrowthStage.healthyPlantStageGameObject?.SetActive(true);
+                break;
+        }
     }
 
     #endregion Private Methods

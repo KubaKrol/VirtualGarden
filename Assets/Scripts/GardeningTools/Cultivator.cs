@@ -94,6 +94,9 @@ public class Cultivator : GardeningTool
 
     public override void Use()
     {
+        if (GameManager.instance.currentGameState != EGameState.InProgress)
+            return;
+
         if (gameInput.CurrentGameInput.Use_Single)
         {
             Plant();

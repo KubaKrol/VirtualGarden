@@ -46,7 +46,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -4811,8 +4811,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0351665, y: 2.19693, z: 9.484617}
-  m_Center: {x: -0.019515395, y: -0.59846497, z: 4.9379005}
+  m_Size: {x: 2.0351665, y: 1.3303032, z: 9.484617}
+  m_Center: {x: -0.019515395, y: -0.1651516, z: 4.9379005}
 --- !u!54 &3682917328756247991
 Rigidbody:
   m_ObjectHideFlags: 0

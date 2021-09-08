@@ -122,6 +122,8 @@ MonoBehaviour:
   maxX: 60
   sensitivity: 4
   cam: {fileID: 3617129360538618924}
+  rotY: 0
+  rotX: 0
 --- !u!114 &531517002941552874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueId: TestScene_00_0120a6a0-0d06-473a-b8c1-9e66481bb021
+  uniqueId: Player_c338ce92-c92a-41ad-80c9-abb29ceaa619
 --- !u!1 &1934828116286876625
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abb4d405bb3d384f94da3d71bddafce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 30
+  upDirection: {x: 0, y: 1, z: 0}
+  rotationSpeed: 15
   gameInput: {fileID: 11400000, guid: 8312b2968b1de0e4c9722d01e63faaec, type: 2}
   playerCamera: {fileID: 8998628892382048316}
 --- !u!136 &4751855803631204489
@@ -308,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d5c4fc5a8761949b9ae370f149887c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 8998628892382048316}
 --- !u!114 &5918695661021842621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6557f17be4f0094ea79ac80ff935fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueId: TestScene_00_2970a716-f796-4e61-8383-2e58672e07ee
+  uniqueId: Player_b45898e5-5eb4-4180-a245-ef4ecc763acc
 --- !u!1 &3765370698315202450
 GameObject:
   m_ObjectHideFlags: 0

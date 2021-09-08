@@ -1,29 +1,26 @@
-﻿using Sirenix.OdinInspector;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterPistol : GardeningTool
+public class MainMenu : MonoBehaviour
 {
     #region Inspector Variables
-
-    [Title("WaterPistol Dependencies")]
-
-    [SerializeField] private WaterCollision waterCollision;
-    [SerializeField] private ParticleSystem waterParticleSystem;
-
-    [Title("Settings")]
-
-    [SerializeField] private float wateringSpeed = 2f;
+    //These are variables that should be set in the Inspector - Use [SerializeField] or [ShowInInspector]
+    //Can be public or private.
 
     #endregion Inspector Variables
 
 
     #region Unity Methods
 
-    public override void Update()
+    private void OnEnable()
     {
-        base.Update();
+        GameManager.instance?.ChangeGameState(EGameState.InMainMenu);
+    }
+
+    private void Awake()
+    {
+        GameManager.instance?.ChangeGameState(EGameState.InMainMenu);
     }
 
     #endregion UnityMethods
@@ -37,19 +34,8 @@ public class WaterPistol : GardeningTool
 
 
     #region Public Methods
-    
-    public override void Use()
-    {
-        if (gameInput.CurrentGameInput.Use_Continous)
-        {
-            waterParticleSystem.Play();
+    //Methods accessible from every other script referencing this class.
 
-            foreach(var plant in waterCollision.plantsInRange)
-            {
-                plant.WaterMe((wateringSpeed / plant.maxIrrigationTime) * Time.deltaTime);
-            }
-        }
-    }
 
     #endregion Public Methods
 

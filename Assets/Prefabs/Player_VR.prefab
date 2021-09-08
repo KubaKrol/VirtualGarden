@@ -492,14 +492,14 @@ MonoBehaviour:
   JumpForce: 0.3
   RotationAmount: 1.5
   RotationRatchet: 45
-  SnapRotation: 1
+  SnapRotation: 0
   FixedSpeedSteps: 0
   HmdResetsY: 1
   HmdRotatesY: 1
   GravityModifier: 1
   useProfileData: 0
   EnableLinearMovement: 1
-  EnableRotation: 1
+  EnableRotation: 0
   RotationEitherThumbstick: 0
 --- !u!114 &7770461540504941435
 MonoBehaviour:

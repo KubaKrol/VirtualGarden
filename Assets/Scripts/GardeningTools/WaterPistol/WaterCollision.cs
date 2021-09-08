@@ -49,17 +49,6 @@ public class WaterCollision : MonoBehaviour
 
     #region Public Methods
 
-    /*public void TurnOn(WaterPistol myPistol)
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void TurnOff(WaterPistol myPistol)
-    {
-        gameObject.SetActive(false);
-        plantsInRange.Clear();
-    }*/
-
 
     #endregion Public Methods
 

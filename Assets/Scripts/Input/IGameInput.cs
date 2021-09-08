@@ -10,4 +10,9 @@
     bool UseDetailer { get; }
     float ToolHorizontalAxis { get; }
     float ToolVerticalAxis { get; }
+
+    bool saveViewpoint { get; }
+    bool goToViewpoint { get;  }
+
+    bool useMenuNavigator { get; }
 }

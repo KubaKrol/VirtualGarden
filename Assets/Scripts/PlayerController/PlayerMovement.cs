@@ -7,6 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Inspector Variables
 
+    [Title("Settings")]
+
+    [SerializeField] public float movementSpeed;
+    [SerializeField] public Vector3 upDirection;
+    [SerializeField] [Range(0f, 60f)] float rotationSpeed;
+
     [Title("Dependencies")]
 
     [SerializeField] private GameInput gameInput;

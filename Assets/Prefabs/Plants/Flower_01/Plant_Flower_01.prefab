@@ -123,19 +123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantGrowthStages:
-  - timeToReachStage: 10
+  - timeToReachStage: 0
     healthyPlantStageGameObject: {fileID: 1239991278556609971}
     sickPlantStageGameObject: {fileID: 1239991278556609971}
     deadPlantStageGameObject: {fileID: 1239991278556609971}
-  - timeToReachStage: 20
+  - timeToReachStage: 54000
     healthyPlantStageGameObject: {fileID: 4948892161304036247}
     sickPlantStageGameObject: {fileID: 4948892161304036247}
     deadPlantStageGameObject: {fileID: 4948892161304036247}
-  - timeToReachStage: 30
+  - timeToReachStage: 108000
     healthyPlantStageGameObject: {fileID: 6624799515254577935}
     sickPlantStageGameObject: {fileID: 6624799515254577935}
     deadPlantStageGameObject: {fileID: 6624799515254577935}
-  maxIrrigationTime: 590
+  maxIrrigationTime: 54000
   CurrentPlantState: 0
 --- !u!1 &7802472701393949579
 GameObject:

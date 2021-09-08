@@ -36,6 +36,9 @@ public class GardeningTool : MonoBehaviour
 
     public virtual void PickUp()
     {
+        if (GameManager.instance.currentGameState != EGameState.InProgress)
+            return;
+
         gameObject.SetActive(true);
         CurrentState = EGardeningToolState.BeingUsed;
     }

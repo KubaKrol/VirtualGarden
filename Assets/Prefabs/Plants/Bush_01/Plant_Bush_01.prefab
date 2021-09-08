@@ -98,15 +98,15 @@ MonoBehaviour:
     healthyPlantStageGameObject: {fileID: 7268798191162962790}
     sickPlantStageGameObject: {fileID: 6686428479896972719}
     deadPlantStageGameObject: {fileID: 5916502501297087399}
-  - timeToReachStage: 15
+  - timeToReachStage: 54000
     healthyPlantStageGameObject: {fileID: 1292626281297482749}
     sickPlantStageGameObject: {fileID: 1110031063046540499}
     deadPlantStageGameObject: {fileID: 4178713552880795191}
-  - timeToReachStage: 30
+  - timeToReachStage: 108000
     healthyPlantStageGameObject: {fileID: 2871931514467497079}
     sickPlantStageGameObject: {fileID: 9205665052405037381}
     deadPlantStageGameObject: {fileID: 548703464735565325}
-  maxIrrigationTime: 15
+  maxIrrigationTime: 54000
   CurrentPlantState: 0
 --- !u!1 &5435858626263077165
 GameObject:

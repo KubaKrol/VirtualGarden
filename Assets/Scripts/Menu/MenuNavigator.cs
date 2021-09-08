@@ -25,6 +25,19 @@ public class MenuNavigator : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.instance.currentGameState == EGameState.InMainMenu)
+        {
+            if(!raycastOrigin.gameObject.activeSelf)
+                raycastOrigin.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (raycastOrigin.gameObject.activeSelf)
+                raycastOrigin.gameObject.SetActive(false);
+
+            return;
+        }
+
         if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out menuNavigatorRaycastHit, 10f, layerMask) && raycastOrigin.gameObject.activeSelf)
         {
             Button raycastedButton = null;
@@ -48,7 +61,7 @@ public class MenuNavigator : MonoBehaviour
 
         if (selectedButton != null)
         {
-            if (gameInput.CurrentGameInput.Use_Single)
+            if (gameInput.CurrentGameInput.useMenuNavigator)
             {
                 selectedButton.onClick.Invoke();
             }
@@ -66,8 +79,15 @@ public class MenuNavigator : MonoBehaviour
 
 
     #region Public Methods
-    //Methods accessible from every other script referencing this class.
-
+    
+    [Button]
+    public void Click()
+    {
+        if (selectedButton != null)
+        {
+            selectedButton.onClick.Invoke();
+        }
+    }
 
     #endregion Public Methods
 

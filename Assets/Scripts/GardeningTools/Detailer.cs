@@ -33,6 +33,16 @@ public class Detailer : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.currentGameState != EGameState.InProgress)
+        {
+            if (raycastOrigin.gameObject.activeSelf)
+                raycastOrigin.gameObject.SetActive(false);
+
+            myCanvasGroup.alpha = 0f;
+
+            return;
+        }
+
         if (gameInput.CurrentGameInput.UseDetailer)
         {
             if (!raycastOrigin.gameObject.activeSelf)

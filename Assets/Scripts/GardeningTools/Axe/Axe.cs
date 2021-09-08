@@ -6,8 +6,8 @@ using UnityEngine;
 public class Axe : GardeningTool
 {
     #region Inspector Variables
-    //These are variables that should be set in the Inspector - Use [SerializeField] or [ShowInInspector]
-    //Can be public or private.
+
+    [SerializeField] private float speedToCut = 0.04f;
 
     #endregion Inspector Variables
 
@@ -33,7 +33,7 @@ public class Axe : GardeningTool
 
             if (plant != null)
             {
-                if(Speed > 0.04f)
+                if(Speed > speedToCut)
                 {
                     plant.CutMeDown();
                 }
